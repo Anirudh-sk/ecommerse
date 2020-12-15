@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Mayuri</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer;height:90%;}
+.w3-half img:hover{opacity:1}
+</style>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-storage.js"></script>
+
+  
+  <script src="./script.js"></script>
+
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-black w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>MAYURI</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>MAYURI</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>Our Products</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+     <a class="imgbox" href='./pages/Women wear.html'><img src="./Images/women wear.jpg" style="width:100%"  alt="Women Wear"><div class="text">Women's Wear</div></a>
+      <a class="imgbox" href='./pages/Men Chlothing.html'><img src="./Images/mens clothing.jpg" style="width:100%"  alt="Men Clothing"><div class="text">Men's Wear</div></a>
+      <a class="imgbox" href='./pages/boys clothing.html'><img src="./Images/boys clothing.jpg" style="width:100%"  alt="Boys Clothing"><div class="text">Boys' Wear</div></a>
+    </div>
+
+    <div class="w3-half">
+      <a class="imgbox" href='./pages/girls clothing.html'><img src="./Images/girls clothing.jpg" style="width:100%"  alt="Girls Clothing"><div class="text">Girls' Clothing</div></a>
+      <a class="imgbox" href='./pages/infants.html'><img src="./Images/infants.jpg" style="width:100%"  alt="Infants"><div class="text">Baby Products</div></a>
+      <a class="imgbox" href='./pages/kids accessories.html'><img src="./Images/kids accessories.jpg" style="width:100%"  alt="Kids Accessories"><div class="text">Kids' Accessories</div></a>
+    </div>
+
+    <div class="w3-half">
+      <a class="imgbox" href='./pages/stationary.html'><img src="./Images/stationary.jpg" style="width:100%"  alt="Stationary"><div class="text">Stationery</div></a>
+      <a class="imgbox" href='./pages/kitchen appliances.html'><img src="./Images/kitchen appliances.jpg" style="width:100%"  alt="Kitchen Appliances"><div class="text">Kitchen Appliances</div></a>
+      <a class="imgbox" href='./pages/home furnishing.html'><img src="./Images/Home Furnishing.jpeg" style="width:100%"  alt="Home Furnishing"><div class="text">Home Furnishing</div></a>
+      <a class="imgbox" href='./pages/home decorations.html'><img src="./Images/home decor.jpg" style="width:100%"  alt="Home Decorations"><div class="text">Home Decorations</div></a>
+      <a class="imgbox" href='./pages/beauty and makeup.html'><img src="./Images/Makeup.jpeg" style="width:100%"  alt="Beauty And Makeup"><div class="text">Cosmetics</div></a>
+      <a class="imgbox" href='./pages/footwear.html'><img src="./Images/footwear.jpg" style="width:100%"  alt="footwear"><div class="text">Footwear</div></a>
+    </div>
+
+    <div class="w3-half">
+      <a class="imgbox" href='./pages/jwellery.html'><img src="./Images/jwellery.jpg" style="width:100%"  alt="Jwellery"><div class="text">Jewellery</div></a>
+      <a class="imgbox" href='./pages/Electronic Gadgets.html'><img src="./Images/electronic gadgets.jpg" style="width:100%"  alt="Electronic Gadgets"><div class="text">Electronic Gadgets</div></a>
+      <a class="imgbox" href='./pages/men accessories.html'><img src="./Images/men accessories.jpg" style="width:100%"  alt="Men Accessories"><div class="text">Men's Accessories</div></a>
+      <a class="imgbox" href='./pages/Phone Accessories.html'><img src="./Images/phone accessories.jpg" style="width:100%"  alt="Phone Accessories"><div class="text">Phone Accessories</div></a>
+      <a class="imgbox" href='./pages/women accessories.html'><img src="./Images/women accessories.jpg" style="width:100%"  alt="Women Accessories"><div class="text">Women's Accessories</div></a>
+      <a class="imgbox" href='./pages/Toys and gifts.html'><img src="./Images/gifts and toys.jpg" style="width:100%"  alt="Toys And Gifts"><div class="text">Toys and Gifts</div></a>
+    </div>
+    
+  </div>
+
+  
+  <footer> 
+    <div class="w3-container" id="contact" style="margin-top:75px">
+      <h1 class="w3-xxxlarge" ><b>Contact</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <h3>Love these collections want to see more Get in touch with us here 😊</h3>
+      <h3><img src="https://img.icons8.com/doodle/48/000000/whatsapp.png"/><a href=""> +91 9841575497</a></h3>
+
+      
+      <h3><img style="height: 70px; width: 65px;" src="https://img.icons8.com/clouds/100/fa314a/gmail.png"/><a href="">mayurimart1976@gmail.com</a></h3>
+    </div>
+  </footer>
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+
+</body>
+</html>

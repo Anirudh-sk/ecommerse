@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Mayuri</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-storage.js"></script>
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer;height:90%;}
+.w3-half img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-black w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>MAYURI</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="../index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Home</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a><br>
+    <a href="./Toys and gifts.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Toys And Gifts</a> 
+    <a href="./stationary.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Stationery</a> 
+    <a href="./Phone Accessories.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Phone Accessories</a> 
+    <a href="./Men Chlothing.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Men's Clothing </a> 
+    <a href="./men accessories.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Men's Accessories</a> 
+    <a href="./kitchen appliances.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Kitchen Appliances</a> 
+    <a href="./kids accessories.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Kids' Accessories</a> 
+    <a href="./jwellery.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Jewellery</a> 
+    <a href="./infants.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Baby Products</a> 
+    <a href="./home furnishing.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Home Furnishing</a> 
+    <a href="./home decorations.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Home Decorations</a> 
+    <a href="./girls clothing.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Girl's Clothing</a> 
+    <a href="./footwear.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">footwear</a> 
+    <a href="./boys clothing.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Boy's Clothing</a> 
+    <a href="./beauty and makeup.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Beauty And Makeup</a>  
+    <a href="./women accessories.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Women's Accessories</a>  
+    <a href="./Women wear.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white" style="font-size: larger;">Women's Wear</a> 
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>MAYURI</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>Electronic Gadgets</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding" id="clothes-collection"></div>
+
+  
+  <footer> 
+    <div class="w3-container" id="contact" style="margin-top:75px">
+      <h1 class="w3-xxxlarge" ><b>Contact</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <h3>Love these collections want to see more Get in touch with us here 😊</h3>
+      <h3><img src="https://img.icons8.com/doodle/48/000000/whatsapp.png"/><a href=""> +91 9841575497</a></h3>
+
+      
+      <h3><img style="height: 70px; width: 65px;" src="https://img.icons8.com/clouds/100/fa314a/gmail.png"/><a href="">mayurimart1976@gmail.com</a></h3>
+    </div>
+  </footer>
+
+
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+
+</body>
+<script src="../script.js"></script>
+<script>
+
+storageRef.child("electronic gadgets").listAll().then(function(res) {
+  const urlPromises = res.items.map(item =>  new Promise((resolve) => 
+      item.getDownloadURL().then(url => resolve({url, name: item.name})).catch(err => resolve(null))
+    ));
+
+    console.log(res.items);
+
+    Promise.all(urlPromises).then(urlList => {
+      appendClothes(urlList.filter(item => item !== null))
+      
+    });
+}).catch(function(error) {
+  console.error(error);
+});
+</script>
+</html>
